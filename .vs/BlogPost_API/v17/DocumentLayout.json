@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DotNet Project\\BlogPost_API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|d:\\dotnet project\\blogpost_api\\blogpost_api\\data\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|solutionrelative:blogpost_api\\data\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|d:\\dotnet project\\blogpost_api\\blogpost_api\\data\\models\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|solutionrelative:blogpost_api\\data\\models\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Data\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "BlogPost_API\\Data\\Models\\Category.cs",
+              "ToolTip": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Data\\Models\\Category.cs",
+              "RelativeToolTip": "BlogPost_API\\Data\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T16:39:07.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Blogpost.cs",
+              "DocumentMoniker": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Data\\Models\\Blogpost.cs",
+              "RelativeDocumentMoniker": "BlogPost_API\\Data\\Models\\Blogpost.cs",
+              "ToolTip": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Data\\Models\\Blogpost.cs",
+              "RelativeToolTip": "BlogPost_API\\Data\\Models\\Blogpost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T16:29:31.347Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
