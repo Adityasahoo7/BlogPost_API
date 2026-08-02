@@ -12,11 +12,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.29">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogPost_Models\BlogPost_Models.csproj" />
+    <ProjectReference Include="..\Blogpost_Service\Blogpost_Service.csproj" />
   </ItemGroup>
 
 </Project>

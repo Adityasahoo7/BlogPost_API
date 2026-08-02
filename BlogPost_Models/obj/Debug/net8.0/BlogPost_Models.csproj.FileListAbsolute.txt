@@ -1,0 +1,15 @@
+D:\DotNet Project\BlogPost_API\BlogPost_Models\bin\Debug\net8.0\BlogPost_Models.deps.json
+D:\DotNet Project\BlogPost_API\BlogPost_Models\bin\Debug\net8.0\BlogPost_Models.runtimeconfig.json
+D:\DotNet Project\BlogPost_API\BlogPost_Models\bin\Debug\net8.0\BlogPost_Models.dll
+D:\DotNet Project\BlogPost_API\BlogPost_Models\bin\Debug\net8.0\BlogPost_Models.pdb
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.csproj.AssemblyReference.cache
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.AssemblyInfoInputs.cache
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.AssemblyInfo.cs
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.csproj.CoreCompileInputs.cache
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.sourcelink.json
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.dll
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\refint\BlogPost_Models.dll
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.pdb
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\BlogPost_Models.genruntimeconfig.cache
+D:\DotNet Project\BlogPost_API\BlogPost_Models\obj\Debug\net8.0\ref\BlogPost_Models.dll
