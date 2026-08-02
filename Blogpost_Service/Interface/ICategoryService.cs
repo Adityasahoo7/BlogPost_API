@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Blogpost_Service.Interface
 {
-    public interface ICategory
+    public interface ICategoryService
     {
-        Task<CategoryDTO> Addcategory(CreateCategoryDTO dto);
+
+        Task Addcategory(CreateCategoryDTO dto);
     }
 }

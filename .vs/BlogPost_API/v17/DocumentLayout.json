@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{856678FC-9520-40C4-8435-F0385A103856}|Blogpost_Service\\Blogpost_Service.csproj|solutionrelative:blogpost_service\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{856678FC-9520-40C4-8435-F0385A103856}|Blogpost_Service\\Blogpost_Service.csproj|d:\\dotnet project\\blogpost_api\\blogpost_service\\interface\\icategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{856678FC-9520-40C4-8435-F0385A103856}|Blogpost_Service\\Blogpost_Service.csproj|solutionrelative:blogpost_service\\interface\\icategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|d:\\dotnet project\\blogpost_api\\blogpost_api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|solutionrelative:blogpost_api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0A4F0C-9430-441F-997A-F783E90975F0}|BlogPost_API\\BlogPost_API.csproj|d:\\dotnet project\\blogpost_api\\blogpost_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ICategory.cs",
-              "DocumentMoniker": "D:\\DotNet Project\\BlogPost_API\\Blogpost_Service\\Interface\\ICategory.cs",
-              "RelativeDocumentMoniker": "Blogpost_Service\\Interface\\ICategory.cs",
-              "ToolTip": "D:\\DotNet Project\\BlogPost_API\\Blogpost_Service\\Interface\\ICategory.cs",
-              "RelativeToolTip": "Blogpost_Service\\Interface\\ICategory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "BlogPost_API\\Controllers\\CategoriesController.cs",
+              "ToolTip": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "BlogPost_API\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T08:19:16.878Z",
+              "WhenOpened": "2026-08-02T14:32:28.757Z",
               "EditorCaption": ""
             },
             {
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "Blogpost_Service\\Services\\CategoryService.cs",
               "ToolTip": "D:\\DotNet Project\\BlogPost_API\\Blogpost_Service\\Services\\CategoryService.cs",
               "RelativeToolTip": "Blogpost_Service\\Services\\CategoryService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAWwCAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-02T08:08:03.328Z",
               "EditorCaption": ""
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "BlogPost_API\\Program.cs",
               "ToolTip": "D:\\DotNet Project\\BlogPost_API\\BlogPost_API\\Program.cs",
               "RelativeToolTip": "BlogPost_API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-02T05:12:39.23Z",
               "EditorCaption": ""

@@ -17,12 +17,12 @@ namespace Blogpost_DataAccess.Repositary
             _context = context;
         }
 
-        public async Task<Category> AddAsync(Category category)
+        public async Task AddAsync(Category category)
         {
             await _context.CategoryDS.AddAsync(category);
             await _context.SaveChangesAsync();
 
-            return category;
+           // return category;
 
         }
     }
