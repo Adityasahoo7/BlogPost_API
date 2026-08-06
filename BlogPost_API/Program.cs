@@ -14,6 +14,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+//-------------------------ADD CORS POLICY---------------------------------------
+
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("AllowAngularApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+        });
+});
+
 //Add DbContext
 builder.Services.AddDbContext<BlogPostDbContext>(options =>
 {
@@ -32,6 +44,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAngularApp");
+
 
 app.UseAuthorization();
 

@@ -22,7 +22,13 @@ namespace BlogPost_API.Controllers
             Console.WriteLine("Aditya Sahoo");
             await _categoriservice.Addcategory(dto);
 
-            return Ok("Category Created Successfully With Name "+dto.Name);
+            //return Ok("Category Created Successfully With Name "+dto.Name);
+            return Ok(new
+            {
+               success = true,
+                message = $"Category '{dto.Name}' created successfully. "
+
+            });
         }
 
     }
