@@ -30,6 +30,14 @@ namespace BlogPost_API.Controllers
 
             });
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategory()
+        {
+            var category = await _categoriservice.GetAllCategoryservice();
+
+            return Ok(category);
+        }
+
 
     }
 }

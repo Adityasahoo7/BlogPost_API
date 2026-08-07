@@ -10,5 +10,6 @@ namespace Blogpost_DataAccess.Interface
     public interface ICategories
     {
         Task AddAsync(Category category);
+        Task<List<Category>> GetAllAsync();
     }
 }

@@ -1,3 +1,28 @@
 .vs/
 
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# Packages
+packages/
+
+# Publish
+publish/
+
+# OS Files
+Thumbs.db
+.DS_Store
+
 

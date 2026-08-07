@@ -11,5 +11,6 @@ namespace Blogpost_Service.Interface
     {
 
         Task Addcategory(CreateCategoryDTO dto);
+        Task<List<CategoryDTO>> GetAllCategoryservice();
     }
 }

@@ -32,5 +32,17 @@ namespace Blogpost_Service.Services
 
             
         }
+
+        public async Task<List<CategoryDTO>> GetAllCategoryservice()
+        {
+            var gcategory = await _catagoryrepo.GetAllAsync();
+
+            return gcategory.Select(e => new CategoryDTO
+            {
+                Id = e.Id,
+                Name = e.Name,
+                URLHandle = e.URLHandle
+            }).ToList();
+        }
     }
 }

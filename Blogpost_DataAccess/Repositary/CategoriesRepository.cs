@@ -1,6 +1,7 @@
 ﻿using BlogPost_API.Data;
 using BlogPost_API.Data.Models;
 using Blogpost_DataAccess.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,13 @@ namespace Blogpost_DataAccess.Repositary
 
            // return category;
 
+        }
+
+      
+
+        public async Task<List<Category>> GetAllAsync()
+        {
+            return await _context.CategoryDS.ToListAsync();
         }
     }
 }
