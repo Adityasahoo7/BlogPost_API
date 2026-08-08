@@ -67,14 +67,14 @@ namespace Blogpost_Service.Services
             };
         }
 
-        public async Task UpdateCategoryService(UpdateCategoryDTO dto)
+        public async Task UpdateCategoryService(Guid id ,UpdateCategoryDTO dto)
         {
-            var category = await _catagoryrepo.GetByIdRepo(dto.Id);
+            var category = await _catagoryrepo.GetByIdRepo(id);
             if (category == null)
             {
-                throw new Exception("Category Not found For this ID : " + dto.Id);
+                throw new Exception("Category Not found For this ID : " + id);
             }
-
+            category.Id = id;
             category.Name = dto.Name;
             category.URLHandle = dto.URLHandle;
 

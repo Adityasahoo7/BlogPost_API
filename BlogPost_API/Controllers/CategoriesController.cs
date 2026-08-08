@@ -52,14 +52,14 @@ namespace BlogPost_API.Controllersi
             return Ok(category);
         }
 
-        [HttpPut]
-        [Route("UpdateCategory")]
+            [HttpPut]   
+            [Route("{id:guid}")]
 
-        public async Task<IActionResult> UpdateCategoryBtID(UpdateCategoryDTO dto)
-        {
-            await _categoriservice.UpdateCategoryService(dto);
-            return Ok("Employee Updated Successfully");
-        }
+            public async Task<IActionResult> UpdateCategoryBtID(UpdateCategoryDTO dto,Guid id)  
+            {
+                await _categoriservice.UpdateCategoryService(id,dto);
+                return Ok("Employee Updated Successfully");
+            }
 
         [HttpDelete]
         [Route("Deletecategory")]
