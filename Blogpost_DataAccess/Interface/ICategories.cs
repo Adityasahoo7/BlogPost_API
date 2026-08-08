@@ -11,5 +11,8 @@ namespace Blogpost_DataAccess.Interface
     {
         Task AddAsync(Category category);
         Task<List<Category>> GetAllAsync();
+        Task<Category> GetByIdRepo(Guid id);
+        Task UpdateCategoryRepo(Category category);
+        Task DeleteCategoryRepo(Guid id);
     }
 }

@@ -16,7 +16,7 @@ namespace Blogpost_DataAccess.Repositary
         public CategoriesRepository(BlogPostDbContext context)
         {
             _context = context;
-        }
+        }   
 
         public async Task AddAsync(Category category)
         {
@@ -27,11 +27,31 @@ namespace Blogpost_DataAccess.Repositary
 
         }
 
-      
+        public async Task DeleteCategoryRepo(Guid id)
+        {
+            var category = await _context.CategoryDS.FindAsync(id);
+
+            if (category != null)
+            {
+                _context.CategoryDS.Remove(category);
+                await _context.SaveChangesAsync();
+            }
+        }
 
         public async Task<List<Category>> GetAllAsync()
         {
             return await _context.CategoryDS.ToListAsync();
+        }
+
+        public async Task<Category> GetByIdRepo(Guid id)
+        {
+            return await _context.CategoryDS.FindAsync(id);
+        }
+
+        public async Task UpdateCategoryRepo(Category category)
+        {
+            _context.CategoryDS.Update(category);
+            await _context.SaveChangesAsync();
         }
     }
 }

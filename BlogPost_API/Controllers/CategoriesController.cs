@@ -3,7 +3,7 @@ using Blogpost_Service.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlogPost_API.Controllers
+namespace BlogPost_API.Controllersi
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -36,6 +36,37 @@ namespace BlogPost_API.Controllers
             var category = await _categoriservice.GetAllCategoryservice();
 
             return Ok(category);
+        }
+
+        [HttpGet]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> GetCategoryByID(Guid id)
+        {
+            var category = await _categoriservice.GetCategoryByIDService(id);
+
+            if(category == null)
+            {
+                return NotFound("Category Not Found for this ID: " + id);
+            }
+
+            return Ok(category);
+        }
+
+        [HttpPut]
+        [Route("UpdateCategory")]
+
+        public async Task<IActionResult> UpdateCategoryBtID(UpdateCategoryDTO dto)
+        {
+            await _categoriservice.UpdateCategoryService(dto);
+            return Ok("Employee Updated Successfully");
+        }
+
+        [HttpDelete]
+        [Route("Deletecategory")]
+        public async Task<IActionResult> DeleteCategoryByID(Guid id)
+        {
+            await _categoriservice.DeleteCategoryService(id);
+            return Ok("Category Deleted Successfully");
         }
 
 

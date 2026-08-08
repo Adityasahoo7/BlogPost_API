@@ -12,5 +12,8 @@ namespace Blogpost_Service.Interface
 
         Task Addcategory(CreateCategoryDTO dto);
         Task<List<CategoryDTO>> GetAllCategoryservice();
+        Task<getbyidCategoryDTO> GetCategoryByIDService(Guid id);
+        Task UpdateCategoryService(UpdateCategoryDTO dto);
+        Task DeleteCategoryService(Guid id);
     }
 }
