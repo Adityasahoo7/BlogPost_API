@@ -53,7 +53,7 @@ namespace BlogPost_API.Controllersi
         }
 
             [HttpPut]   
-            [Route("{id:guid}")]
+            [Route("UpdateCategory/{id:guid}")]
 
             public async Task<IActionResult> UpdateCategoryBtID(UpdateCategoryDTO dto,Guid id)  
             {
@@ -62,7 +62,7 @@ namespace BlogPost_API.Controllersi
             }
 
         [HttpDelete]
-        [Route("Deletecategory")]
+        [Route("Deletecategory/{id:guid}")]
         public async Task<IActionResult> DeleteCategoryByID(Guid id)
         {
             await _categoriservice.DeleteCategoryService(id);
