@@ -1,0 +1,37 @@
+﻿using BlogPost_API.Data;
+using BlogPost_API.Data.Models;
+using Blogpost_DataAccess.Interface;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blogpost_DataAccess.Repositary
+{
+    public class BlogpostRepo : IBlogpostRepo
+    {
+        private readonly BlogPostDbContext _context;
+        public BlogpostRepo(BlogPostDbContext context)
+        {
+            _context = context;
+        }
+        public async Task AddBlogRepo(Blogpost blogpost)
+        {
+            await _context.BlogPostDS.AddAsync(blogpost);
+            await _context.SaveChangesAsync();
+
+           // _context.BlogPostDS.FromSqlRaw
+           
+        }
+
+        public async Task<List<Blogpost>> GetallblogRepo()
+        {
+            return await _context.BlogPostDS.ToListAsync();
+
+            
+            
+        }
+    }
+}
