@@ -11,5 +11,6 @@ namespace Blogpost_Service.Interface
     {
         Task AddBlogservice(CreateBlogpostDTO dto);
         Task<List<BlogpostDTO>> getallblogservice();
+        Task<List<ViewBlogpostAdminDTO>> getallblogserviceAdminV2();
     }
 }

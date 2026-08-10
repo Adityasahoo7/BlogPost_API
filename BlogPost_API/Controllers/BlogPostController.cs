@@ -32,5 +32,14 @@ namespace BlogPost_API.Controllers
 
             return Ok(blog);
         }
+
+        [HttpGet]
+        [Route("GetAllBlogpostV2")]
+        public async Task<IActionResult> getallblogadminv2()
+        {
+            var blogv2 = await _service.getallblogserviceAdminV2();
+
+            return Ok(blogv2);
+        }
     }
 }

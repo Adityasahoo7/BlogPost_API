@@ -26,7 +26,7 @@ namespace Blogpost_Service.Services
                 Content = dto.Content,
                 UrlHandle = dto.UrlHandle,
                 FeaturedImageURL = dto.FeaturedImageURL,
-                DateCreated = dto.DateCreated,
+                DateCreated = DateTime.Now,
                 Auther = dto.Auther,
                 Isvisible = dto.Isvisible
             };
@@ -50,6 +50,19 @@ namespace Blogpost_Service.Services
                 DateCreated = b.DateCreated,
                 Auther = b.Auther,
                 Isvisible = b.Isvisible
+            }).ToList();
+        }
+
+        public async Task<List<ViewBlogpostAdminDTO>> getallblogserviceAdminV2()
+        {
+            var blogdata = await _blogrepo.GetallblogRepo();
+
+            return blogdata.Select(data => new ViewBlogpostAdminDTO
+            {
+                Id=data.Id,
+                Title=data.Title,
+                ShortDescription=data.ShortDescription,
+                Isvisible=data.Isvisible
             }).ToList();
         }
     }

@@ -33,5 +33,10 @@ namespace Blogpost_DataAccess.Repositary
             
             
         }
+
+        //public async Task<List<Blogpost>> Getallblogrepoadminv2()
+        //{
+        //    return await _context.BlogPostDS.ToListAsync();
+        //}
     }
 }
