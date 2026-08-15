@@ -13,5 +13,9 @@ namespace Blogpost_Service.Interface
         Task<List<BlogpostDTO>> getallblogservice();
         Task<List<ViewBlogpostAdminDTO>> getallblogserviceAdminV2();
         Task<BlogpostDTO> getbyidblogservice(Guid id);
+
+        Task UpdateBlogService(Guid id, UpdateBlogpostDTO dto);
+
+        Task DeleteBlogService(Guid id);
     }
 }

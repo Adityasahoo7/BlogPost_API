@@ -26,6 +26,17 @@ namespace Blogpost_DataAccess.Repositary
            
         }
 
+        public async Task DeleteBlogRepo(Guid id)
+        {
+            var blog = await _context.BlogPostDS.FirstOrDefaultAsync(b => b.Id == id);
+
+            if (blog != null)
+            {
+                _context.BlogPostDS.Remove(blog);
+                await _context.SaveChangesAsync();
+            }
+        }
+
         public async Task<List<Blogpost>> GetallblogRepo()
         {
             return await _context.BlogPostDS.Include(b=>b.Categotys)
@@ -39,6 +50,12 @@ namespace Blogpost_DataAccess.Repositary
         {
             return await _context.BlogPostDS.Include(b => b.Categotys).FirstOrDefaultAsync(b => b.Id == id);
 
+        }
+
+        public async Task UpdateBlogRepo(Blogpost blogpost)
+        {
+             _context.BlogPostDS.Update(blogpost);
+            await _context.SaveChangesAsync();
         }
 
         //public async Task<List<Blogpost>> Getallblogrepoadminv2()

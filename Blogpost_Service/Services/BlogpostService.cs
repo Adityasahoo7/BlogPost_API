@@ -48,6 +48,13 @@ namespace Blogpost_Service.Services
            
         }
 
+        public async Task DeleteBlogService(Guid id)
+        {
+           
+            await _blogrepo.DeleteBlogRepo(id);
+
+        }
+
         public async Task<List<BlogpostDTO>> getallblogservice()
         {
             var allblog = await _blogrepo.GetallblogRepo();
@@ -118,6 +125,40 @@ namespace Blogpost_Service.Services
 
 
             };
+        }
+
+        public async Task UpdateBlogService(Guid id,UpdateBlogpostDTO dto)
+        {
+            var blog = await _blogrepo.GetByIdBlogRepo(id);
+            if (blog == null)
+            {
+                throw new Exception("Blog iD Not Found ID : " + id);
+            }
+
+            blog.Id = id;
+            blog.Title = dto.Title;
+            blog.ShortDescription = dto.ShortDescription;
+            blog.Content = dto.Content;
+            blog.UrlHandle = dto.UrlHandle;
+            blog.FeaturedImageURL = dto.FeaturedImageURL;
+            blog.DateCreated = DateTime.Now;
+            blog.Auther = dto.Auther;
+            blog.Isvisible = dto.Isvisible;
+            blog.Categotys.Clear();
+
+
+            foreach(var item in dto.Categotys)
+            {
+                var category = await _categoryrepo.GetByIdRepo(item);
+
+                if (category != null)
+                {
+                    blog.Categotys.Add(category);
+                }
+            }
+
+            await _blogrepo.UpdateBlogRepo(blog);
+
         }
     }
 }

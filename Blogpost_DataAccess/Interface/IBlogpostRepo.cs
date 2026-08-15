@@ -13,5 +13,7 @@ namespace Blogpost_DataAccess.Interface
         Task<List<Blogpost>> GetallblogRepo();
         // Task<List<Blogpost>> Getallblogrepoadminv2();
         Task<Blogpost> GetByIdBlogRepo(Guid id);
+        Task UpdateBlogRepo(Blogpost blogpost);
+        Task DeleteBlogRepo(Guid id);
     }
 }

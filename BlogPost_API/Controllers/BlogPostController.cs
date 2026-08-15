@@ -49,5 +49,21 @@ namespace BlogPost_API.Controllers
             return Ok(blog);
         }
 
+        [HttpPut]
+        [Route("UpdateBlog/{id:guid}")]
+        public async Task<IActionResult> UpdateBlog(Guid id, UpdateBlogpostDTO dto)
+        {
+            await _service.UpdateBlogService(id,dto);
+
+            return Ok("Blog Updated Successfully");
+        }
+
+        [HttpDelete]
+        [Route("DeleteBlog/{id:guid}")]
+        public async Task<IActionResult> DeleteBlog(Guid id)
+        {
+            await _service.DeleteBlogService(id);
+            return Ok("Blog Deleted Successfully");
+        }
     }
 }
