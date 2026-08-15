@@ -28,10 +28,11 @@ namespace Blogpost_DataAccess.Repositary
 
         public async Task<List<Blogpost>> GetallblogRepo()
         {
-            return await _context.BlogPostDS.ToListAsync();
+            return await _context.BlogPostDS.Include(b=>b.Categotys)
+                .ToListAsync();
 
-            
-            
+            //This is the collection "Categotys"
+
         }
 
         //public async Task<List<Blogpost>> Getallblogrepoadminv2()

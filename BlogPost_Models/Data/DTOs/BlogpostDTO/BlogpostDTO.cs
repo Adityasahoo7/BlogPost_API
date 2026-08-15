@@ -18,5 +18,8 @@ namespace BlogPost_Models.Data.DTOs.BlogpostDTO
         public DateTime DateCreated { get; set; }
         public string Auther { get; set; }
         public bool Isvisible { get; set; }
+
+
+        public List<CategoryDTO> categories { get; set; } = new List<CategoryDTO>();
     }
 }

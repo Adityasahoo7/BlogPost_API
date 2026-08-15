@@ -12,6 +12,8 @@
         public DateTime DateCreated { get; set; }
         public string Auther { get; set; }
         public bool Isvisible { get; set; }
-     
+
+        //  public ICollection<Category> Categotys { get; set; }
+        public ICollection<Category> Categotys { get; set; } = new List<Category>();
     }
 }

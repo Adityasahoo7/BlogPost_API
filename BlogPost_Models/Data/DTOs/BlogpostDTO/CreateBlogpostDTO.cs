@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogPost_API.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,6 @@ namespace BlogPost_Models.Data.DTOs.BlogpostDTO
        // public DateTime DateCreated { get; set; }
         public string Auther { get; set; }
         public bool Isvisible { get; set; }
+        public ICollection<Guid> Categotys { get; set; }
     }
 }

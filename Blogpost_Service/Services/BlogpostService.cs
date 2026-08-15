@@ -1,5 +1,6 @@
 ﻿using BlogPost_API.Data.Models;
 using Blogpost_DataAccess.Interface;
+using BlogPost_Models.Data.DTOs;
 using BlogPost_Models.Data.DTOs.BlogpostDTO;
 using Blogpost_Service.Interface;
 using System;
@@ -13,8 +14,10 @@ namespace Blogpost_Service.Services
     public class BlogpostService : IBlogpostService
     {
         private readonly IBlogpostRepo _blogrepo;
-        public BlogpostService(IBlogpostRepo blogrepo)
+        private readonly ICategories _categoryrepo;
+        public BlogpostService(IBlogpostRepo blogrepo,ICategories categoryrepo)
         {
+            _categoryrepo = categoryrepo;
             _blogrepo = blogrepo;
         }
         public async Task AddBlogservice(CreateBlogpostDTO dto)
@@ -29,7 +32,17 @@ namespace Blogpost_Service.Services
                 DateCreated = DateTime.Now,
                 Auther = dto.Auther,
                 Isvisible = dto.Isvisible
+               // Categotys= dto.Categotys
             };
+
+            foreach(var item in dto.Categotys)
+            {
+                var existcategory = await _categoryrepo.GetByIdRepo(item);
+                if(existcategory is not null)
+                {
+                    blog.Categotys.Add(existcategory);
+                }
+            }
 
             await _blogrepo.AddBlogRepo(blog);
            
@@ -49,7 +62,15 @@ namespace Blogpost_Service.Services
                 FeaturedImageURL = b.FeaturedImageURL,
                 DateCreated = b.DateCreated,
                 Auther = b.Auther,
-                Isvisible = b.Isvisible
+                Isvisible = b.Isvisible,
+
+                categories =b.Categotys.Select(e=>new CategoryDTO
+                {
+                    Id=e.Id,
+                    Name=e.Name,
+                    URLHandle=e.URLHandle
+                }).ToList()
+
             }).ToList();
         }
 
