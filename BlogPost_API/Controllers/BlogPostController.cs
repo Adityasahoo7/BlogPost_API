@@ -41,5 +41,13 @@ namespace BlogPost_API.Controllers
 
             return Ok(blogv2);
         }
+        [HttpGet]
+        [Route("BetByIDBlog/{id:guid}")]
+        public async Task<IActionResult> getbyblogid(Guid id)
+        {
+            var blog = await _service.getbyidblogservice(id);
+            return Ok(blog);
+        }
+
     }
 }

@@ -86,5 +86,38 @@ namespace Blogpost_Service.Services
                 Isvisible=data.Isvisible
             }).ToList();
         }
+
+        public async Task<BlogpostDTO> getbyidblogservice(Guid id)
+        {
+            var blog = await _blogrepo.GetByIdBlogRepo(id);
+
+            if (blog == null)
+            {
+                throw new Exception("No blog data found on This iD : " + id);
+            }
+
+            return new BlogpostDTO
+            {
+                Id = blog.Id,
+                Title = blog.Title,
+                ShortDescription = blog.ShortDescription,
+                Content = blog.Content,
+                UrlHandle = blog.UrlHandle,
+                FeaturedImageURL = blog.FeaturedImageURL,
+                DateCreated = blog.DateCreated,
+                Auther = blog.Auther,
+                Isvisible = blog.Isvisible,
+
+                categories = blog.Categotys.Select(c => new CategoryDTO
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    URLHandle = c.URLHandle
+
+                }).ToList()
+
+
+            };
+        }
     }
 }

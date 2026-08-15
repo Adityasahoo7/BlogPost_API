@@ -11,6 +11,7 @@ namespace Blogpost_DataAccess.Interface
     {
         Task AddBlogRepo(Blogpost blogpost);
         Task<List<Blogpost>> GetallblogRepo();
-       // Task<List<Blogpost>> Getallblogrepoadminv2();
+        // Task<List<Blogpost>> Getallblogrepoadminv2();
+        Task<Blogpost> GetByIdBlogRepo(Guid id);
     }
 }

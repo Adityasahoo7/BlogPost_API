@@ -35,6 +35,12 @@ namespace Blogpost_DataAccess.Repositary
 
         }
 
+        public async Task<Blogpost> GetByIdBlogRepo(Guid id)
+        {
+            return await _context.BlogPostDS.Include(b => b.Categotys).FirstOrDefaultAsync(b => b.Id == id);
+
+        }
+
         //public async Task<List<Blogpost>> Getallblogrepoadminv2()
         //{
         //    return await _context.BlogPostDS.ToListAsync();
