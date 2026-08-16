@@ -28,7 +28,8 @@ namespace Blogpost_DataAccess.Repositary
 
         public async Task DeleteBlogRepo(Guid id)
         {
-            var blog = await _context.BlogPostDS.FirstOrDefaultAsync(b => b.Id == id);
+            // var blog = await _context.BlogPostDS.FirstOrDefaultAsync(b => b.Id == id);
+            var blog = await _context.BlogPostDS.FindAsync(id);
 
             if (blog != null)
             {
