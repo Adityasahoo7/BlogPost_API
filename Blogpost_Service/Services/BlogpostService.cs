@@ -50,7 +50,6 @@ namespace Blogpost_Service.Services
 
         public async Task DeleteBlogService(Guid id)
         {
-           
             await _blogrepo.DeleteBlogRepo(id);
 
         }
