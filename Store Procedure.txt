@@ -6,3 +6,11 @@ from Employee
 Where rrk =2
 
 Delete duplicate record
+
+with deleteduolicaterecord as(
+select * , row_number()
+over(partition by Name , Email,Salary,Phone,Age order by Id) as rownum
+from Employee
+)
+delete from deleteduolicaterecord 
+where rownum>1;
