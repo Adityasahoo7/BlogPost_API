@@ -1,0 +1,8 @@
+select * from(
+select * , dense_rank()
+over(order by Salary desc) as rrk
+from Employee
+)as temptable
+Where rrk =2
+
+Delete duplicate record
