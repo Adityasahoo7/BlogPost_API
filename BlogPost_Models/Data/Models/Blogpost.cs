@@ -1,7 +1,10 @@
-﻿namespace BlogPost_API.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlogPost_API.Data.Models
 {
     public class Blogpost
     {
+        [Required]
         public Guid Id { get; set; }
 
         public string Title { get; set; }
