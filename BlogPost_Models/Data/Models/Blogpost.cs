@@ -6,7 +6,7 @@ namespace BlogPost_API.Data.Models
     {
         [Required]
         public Guid Id { get; set; }
-
+        [Required]
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public string Content { get; set; }
