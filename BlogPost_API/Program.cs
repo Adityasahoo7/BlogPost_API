@@ -4,43 +4,43 @@ using Blogpost_DataAccess.Repositary;
 using Blogpost_Service.Interface;
 using Blogpost_Service.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-//-------------------------ADD CORS POLICY---------------------------------------
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type.FullName);
+});
 
 builder.Services.AddCors(option =>
 {
     option.AddPolicy("AllowAngularApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+            policy.WithOrigins("http://localhost:4200")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
         });
 });
 
-//Add DbContext
 builder.Services.AddDbContext<BlogPostDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConn"));
 });
 
-//Add DI
 builder.Services.AddScoped<ICategories, CategoriesRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBlogpostRepo, BlogpostRepo>();
 builder.Services.AddScoped<IBlogpostService, BlogpostService>();
+builder.Services.AddScoped<IImageRepo, ImageRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -49,9 +49,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAngularApp");
 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "Images")),
+    RequestPath = "/Images"
+});
 
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
