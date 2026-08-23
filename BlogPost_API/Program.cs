@@ -38,6 +38,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBlogpostRepo, BlogpostRepo>();
 builder.Services.AddScoped<IBlogpostService, BlogpostService>();
 builder.Services.AddScoped<IImageRepo, ImageRepository>();
+builder.Services.AddScoped<IImageRepo, ImageRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
 
 var app = builder.Build();
 
@@ -52,10 +54,10 @@ app.UseCors("AllowAngularApp");
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(builder.Environment.ContentRootPath, "Images")),
+        Path.Combine(Directory.GetCurrentDirectory(), "Images")),
     RequestPath = "/Images"
 });
-
+//builder.Environment.ContentRootPath   
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

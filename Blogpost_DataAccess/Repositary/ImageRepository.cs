@@ -1,13 +1,14 @@
-﻿using Blogpost_DataAccess.Interface;
+﻿using BlogPost_API.Data;
+using Blogpost_DataAccess.Interface;
 using BlogPost_Models.Data.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using BlogPost_API.Data;
 
 namespace Blogpost_DataAccess.Repositary
 {
@@ -24,6 +25,15 @@ namespace Blogpost_DataAccess.Repositary
             _httpcontentaccessor = accessor;
             _context = context;
                 
+        }
+
+
+        public async Task<IEnumerable<BlogImage>> GetAllAsync()
+        {
+            return await _context.BlogImageDS
+                .AsNoTracking()
+                .OrderByDescending(x => x.DateCreated)
+                .ToListAsync();
         }
         public async Task<BlogImage> Uploadrepo(IFormFile file, BlogImage blogimage)
         {

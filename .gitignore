@@ -24,5 +24,7 @@ publish/
 # OS Files
 Thumbs.db
 .DS_Store
-
+# Runtime user uploads
+BlogPost_API/Images/
+!BlogPost_API/Images/.gitkeep
 

@@ -11,5 +11,6 @@ namespace Blogpost_DataAccess.Interface
     public interface IImageRepo
     {
         Task<BlogImage> Uploadrepo(IFormFile file, BlogImage blogimage);
+        Task<IEnumerable<BlogImage>> GetAllAsync();
     }
 }

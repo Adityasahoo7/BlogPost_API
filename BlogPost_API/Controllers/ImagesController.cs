@@ -1,6 +1,5 @@
-﻿using Blogpost_DataAccess.Interface;
-using BlogPost_Models.Data.DTOs.BlogImageDTO;
-using BlogPost_Models.Data.Models;
+﻿using BlogPost_Models.Data.DTOs.BlogImageDTO;
+using Blogpost_Service.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,11 +12,18 @@ namespace BlogPost_API.Controllers
         private const long MaxFileSizeBytes = 10 * 1024 * 1024; // 10 MB
         private static readonly string[] AllowedExtensions = { ".jpg", ".jpeg", ".png" };
 
-        private readonly IImageRepo _imagerepo;
+        private readonly IImageService _imageservice;
 
-        public ImagesController(IImageRepo imagerepo)
+        public ImagesController(IImageService imageservice)
         {
-            _imagerepo = imagerepo;
+            _imageservice = imageservice;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllImages()
+        {
+            var images = await _imageservice.GetAllAsync();
+            return Ok(images);
         }
 
         [HttpPost("UploadImage")]
@@ -31,25 +37,8 @@ namespace BlogPost_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var blogimage = new BlogImage
-            {
-                FileExtension = Path.GetExtension(request.File.FileName).ToLowerInvariant(),
-                FileName = request.FileName,
-                Title = request.Title,
-                DateCreated = DateTime.UtcNow
-            };
-
-            blogimage = await _imagerepo.Uploadrepo(request.File, blogimage);
-
-            var response = new BlogImageDTO
-            {
-                Id = blogimage.Id,
-                Title = blogimage.Title,
-                DateCreated = blogimage.DateCreated,
-                FileExtension = blogimage.FileExtension,
-                FileName = blogimage.FileName,
-                Url = blogimage.Url
-            };
+            var response = await _imageservice.UploadAsync(
+                request.File, request.FileName, request.Title);
 
             return Ok(response);
         }
