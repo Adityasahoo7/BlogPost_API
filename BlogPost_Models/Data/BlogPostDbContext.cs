@@ -15,5 +15,6 @@ namespace BlogPost_API.Data
         public DbSet<Category> CategoryDS { get; set; }
 
         public DbSet<BlogImage> BlogImageDS { get; set; }
+        public DbSet<Users> UsersDS { get; set; }
     }
 }
