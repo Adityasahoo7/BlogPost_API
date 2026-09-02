@@ -1,5 +1,7 @@
-﻿using Blogpost_DataAccess.Interface;
+﻿using BlogPost_API.Data;
+using Blogpost_DataAccess.Interface;
 using BlogPost_Models.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +10,63 @@ using System.Threading.Tasks;
 
 namespace Blogpost_DataAccess.Repositary
 {
+
+
     public class UserRepository : IUserRepo
     {
-        public Task<Users> getUsersByCredRepo(string username, string password)
+        private readonly BlogPostDbContext _context;
+        public UserRepository(BlogPostDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+                
         }
 
-        public Task<bool> RegisterUserRepo(Users users)
+
+
+        public async Task<Users> getUsersByCredRepo(string username, string password)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                var user = await _context.UsersDS.FirstOrDefaultAsync(u => u.Username == username);
+
+                if (user == null)
+                {
+                    return null;
+                }
+                if (user.Password == password)
+                {
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        
+        }
+
+        public async Task<bool> RegisterUserRepo(Users users)
+        {
+
+            var exists = await _context.UsersDS.AnyAsync(u => u.Username == users.Username);
+            if (exists)
+            {
+                return false;
+            }
+            await _context.UsersDS.AddAsync(users);
+            await _context.SaveChangesAsync();
+            return true;
+
+        
+        
         }
     }
 }
