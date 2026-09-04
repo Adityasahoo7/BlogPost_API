@@ -19,7 +19,7 @@ namespace BlogPost_API.Controllers
         }
 
 
-        [Authorize]
+      
         [HttpPost("LoginUser")]
         public async Task<IActionResult> Login(LoginRequestDTO request)
         {
@@ -46,7 +46,7 @@ namespace BlogPost_API.Controllers
             }
         }
 
-        [Authorize]
+
         [HttpPost("ResisterUser")]
         public async Task<IActionResult> Register(RegisterRequestDTO request)
         {

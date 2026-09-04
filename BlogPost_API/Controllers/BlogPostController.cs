@@ -1,5 +1,6 @@
 ﻿using BlogPost_Models.Data.DTOs.BlogpostDTO;
 using Blogpost_Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +24,7 @@ namespace BlogPost_API.Controllers
 
             return Ok("Blog Added Successfully");
         }
-
+        [Authorize]
         [HttpGet]
         [Route("GetAllBlogpost")]
         public async Task<IActionResult> getallblog()

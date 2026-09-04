@@ -44,6 +44,9 @@ builder.Services.AddScoped<IBlogpostService, BlogpostService>();
 builder.Services.AddScoped<IImageRepo, ImageRepository>();
 builder.Services.AddScoped<IImageRepo, ImageRepository>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IUserRepo, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 
 
 
