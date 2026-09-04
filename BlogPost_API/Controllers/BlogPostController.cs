@@ -34,6 +34,7 @@ namespace BlogPost_API.Controllers
             return Ok(blog);
         }
 
+	[Authorize]
         [HttpGet]
         [Route("GetAllBlogpostV2")]
         public async Task<IActionResult> getallblogadminv2()
