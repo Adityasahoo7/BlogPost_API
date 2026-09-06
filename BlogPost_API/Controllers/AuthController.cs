@@ -47,7 +47,7 @@ namespace BlogPost_API.Controllers
         }
 
 
-        [HttpPost("ResisterUser")]
+        [HttpPost("RegisterUser")]
         public async Task<IActionResult> Register(RegisterRequestDTO request)
         {
             var result = await _service.RegisterAsyncService(request);
