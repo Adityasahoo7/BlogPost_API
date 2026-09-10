@@ -1,0 +1,8 @@
+int[] numbers = { 1, 9, 7, 4, 5, 9, 34, 5, 67, 76, 1 };
+
+var sortedNumbers = numbers.OrderBy(x => x);
+
+foreach (var number in sortedNumbers)
+{
+    Console.Write(number + " ");
+}
