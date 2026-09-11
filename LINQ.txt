@@ -15,5 +15,10 @@ Q2. Get all employees with salary greater than 55000.
 A2. var result = employees.Where(e => e.Salary > 55000).ToList();
 
 
+Q4. Get employees whose name starts with "A" OR "P".
+A4. var result = employees.Where(e => e.Name.StartsWith("A") || e.Name.StartsWith("P")).ToList();
+
+Q5. Get all employees who are NOT in the "HR" department.
+A5. var result = employees.Where(e => e.Department != "HR").ToList();
 
 
