@@ -12,6 +12,11 @@ obj/
 # Rider
 .idea/
 
+
+
+#infra
+BlogPost_Infra/**
+
 # Logs
 *.log
 

@@ -37,6 +37,8 @@ builder.Services.AddDbContext<BlogPostDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConn"));
 });
 
+
+
 builder.Services.AddScoped<ICategories, CategoriesRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IBlogpostRepo, BlogpostRepo>();
