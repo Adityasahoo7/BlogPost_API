@@ -1,0 +1,11 @@
+I worked on a project called **FRIP (Fraud and Risk Intelligence Platform)** for Bank of India. The main purpose of this application is to help bank authorities process and manage fraudulent transaction complaints.
+
+When a customer reports a fraud to the Cyber Police, the complaint is registered on the **I4C portal**, which is a central government portal. Our application is integrated with the I4C portal to fetch complaints related to Bank of India At Regular interval of time.
+
+Once the complaints are fetched, they are registered in our SQL Server database, and the associated documents are stored and forwarded to the respective authorities. After that, the complaints become visible on the FRIP portal, where bank authorities can review and process them.
+
+Our FRIP application is also integrated with **Finacle**, which is the bank's Core Banking System (CBS), to fetch transaction details and history based on the account number.
+
+If the reported amount is available in the customer's account, the authorized bank team can trigger a specific API endpoint to initiate the fund-blocking or lien-marking process.
+
+If the amount is no longer available in the account, the bank team can retrieve the transaction history, update the complaint with the relevant details, and forward or route it to the respective bank's fraud team for further investigation.
